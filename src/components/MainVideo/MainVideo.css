@@ -1,0 +1,10 @@
+.MainVideo {
+  margin: 5px;
+}
+
+iframe {
+  border: none;
+  height: 60vh;
+  margin-top: -20px;
+  width: 100%;
+}

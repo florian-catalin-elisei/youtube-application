@@ -1,0 +1,13 @@
+.VideoItem {
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  padding-bottom: 5px;
+}
+
+img {
+  cursor: pointer;
+}
+
+p {
+  font-weight: 500;
+}
