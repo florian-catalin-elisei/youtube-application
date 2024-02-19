@@ -5,27 +5,20 @@ const youtubeApiKey = process.env.REACT_APP_YOUTUBE_API_KEY;
 
 const instance = axios.create({
   baseURL: youtubeApi,
-  timeout: 5000,
   params: {
     part: "snippet",
     key: youtubeApiKey,
   },
 });
 
-const getVideos = async (searchValue) => {
+export const getVideos = async (searchValue) => {
   try {
-    const response = await instance.get("/search", {
-      params: {
-        q: searchValue,
-      },
-    });
-
-    const { data } = response;
+    const endpoint = "/search";
+    const params = { q: searchValue };
+    const { data } = await instance.get(endpoint, { params });
 
     return data;
   } catch (error) {
-    throw new Error(`Unable to fetch videos: ${error.message}`);
+    throw new Error(`Failed to get videos: ${error.message}`);
   }
 };
-
-export default getVideos;

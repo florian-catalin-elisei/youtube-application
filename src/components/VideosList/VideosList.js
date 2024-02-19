@@ -1,10 +1,8 @@
-import VideoItem from "../VideoItem/VideoItem";
+import { VideoItem } from "../VideoItem/VideoItem";
 import Grid from "@mui/material/Unstable_Grid2";
 import "./VideosList.css";
 
-const VideosList = (props) => {
-  const { videos, selectVideo } = props;
-
+export const VideosList = ({ videos, selectVideo }) => {
   const videosList = videos.map((video, id) => (
     <VideoItem key={id} video={video} selectVideo={selectVideo} />
   ));
@@ -17,5 +15,3 @@ const VideosList = (props) => {
     </div>
   );
 };
-
-export default VideosList;

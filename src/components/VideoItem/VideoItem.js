@@ -1,15 +1,14 @@
 import "./VideoItem.css";
 
-const VideoItem = (props) => {
-  const { video, selectVideo } = props;
+export const VideoItem = ({ video, selectVideo }) => {
+  const { url } = video.snippet.thumbnails.medium;
+  const { title } = video.snippet;
   const handleClick = () => selectVideo(video);
 
   return (
     <div className="VideoItem">
-      <img src={video.snippet.thumbnails.medium.url} alt="Thumbnail" onClick={handleClick} />
-      <p>{video.snippet.title}</p>
+      <img className="VideoItem-thumbnail" src={url} alt="Thumbnail" onClick={handleClick} />
+      <p className="VideoItem-title">{title}</p>
     </div>
   );
 };
-
-export default VideoItem;

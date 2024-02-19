@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./SearchBar.css";
 
-const SearchBar = (props) => {
+export const SearchBar = ({ submit }) => {
   const [searchValue, setSearchValue] = useState("");
 
   const handleChange = (event) => {
@@ -11,17 +11,16 @@ const SearchBar = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    const { submit } = props;
     submit(searchValue);
   };
 
   return (
     <div className="SearchBar">
-      <form onSubmit={handleSubmit}>
+      <form className="SearchBar-form" onSubmit={handleSubmit}>
         <i className="fa-solid fa-magnifying-glass"></i>
 
         <input
+          className="SearchBar-input"
           type="text"
           name="searchBar"
           autoComplete="off"
@@ -29,10 +28,10 @@ const SearchBar = (props) => {
           onChange={handleChange}
         />
 
-        <button type="submit">Search</button>
+        <button className="SearchBar-button" type="submit">
+          Search
+        </button>
       </form>
     </div>
   );
 };
-
-export default SearchBar;

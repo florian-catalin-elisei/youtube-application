@@ -4,10 +4,10 @@
   padding-bottom: 5px;
 }
 
-img {
+.VideoItem-thumbnail {
   cursor: pointer;
 }
 
-p {
+.VideoItem-title {
   font-weight: 500;
 }

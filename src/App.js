@@ -1,24 +1,23 @@
 import { useState, useEffect } from "react";
 import { SearchBar, MainVideo, VideosList } from "./components";
+import { getVideos } from "./api/getVideos";
 import Grid from "@mui/material/Unstable_Grid2";
-import getVideos from "./api";
 import "./App.css";
 
-const App = () => {
+export const App = () => {
   const [videos, setVideos] = useState([]);
-  const [video, setVideo] = useState(null);
+  const [video, setVideo] = useState();
 
-  const fetchVideos = (searchValue) => {
-    getVideos(searchValue).then((data) => {
-      setVideos(data.items);
-      setVideo(data.items[0]);
-    });
+  const fetchVideos = async (searchValue) => {
+    const { items } = await getVideos(searchValue);
+    setVideos(items);
+    setVideo(items[0]);
   };
 
   const selectVideo = (video) => setVideo(video);
 
   useEffect(() => {
-    fetchVideos("South Korea");
+    fetchVideos("Seoul");
   }, []);
 
   return (
@@ -39,5 +38,3 @@ const App = () => {
     </div>
   );
 };
-
-export default App;

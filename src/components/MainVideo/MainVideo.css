@@ -2,7 +2,7 @@
   margin: 5px;
 }
 
-iframe {
+.MainVideo-iframe {
   border: none;
   height: 60vh;
   margin-top: -20px;

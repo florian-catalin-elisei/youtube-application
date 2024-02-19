@@ -1,3 +1,3 @@
-export { default as SearchBar } from "./SearchBar/SearchBar";
-export { default as MainVideo } from "./MainVideo/MainVideo";
-export { default as VideosList } from "./VideosList/VideosList";
+export { SearchBar } from "./SearchBar/SearchBar";
+export { MainVideo } from "./MainVideo/MainVideo";
+export { VideosList } from "./VideosList/VideosList";
