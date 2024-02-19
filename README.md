@@ -4,12 +4,12 @@ This React application provides users with a seamless interface to search for an
 
 ## Installation
 
-Install my-project with npm:
+Install my project with npm
 
 1. Clone the repository to your local machine:
 
 ```bash
-  git clone https://github.com/your-username/youtube-application.git
+  git clone https://github.com/florian-catalin-elisei/youtube-application.git
 ```
 
 2. Navigate to the project directory:
